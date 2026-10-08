@@ -1,0 +1,1069 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marcos Lucas | Desenvolvedor PHP</title>
+
+    <meta
+        name="description"
+        content="Portfólio de Marcos Lucas, estudante de Engenharia de Software e desenvolvedor backend PHP."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0b0d10;
+            color: #e8eaed;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(11, 13, 16, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1c2026;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #7dd3fc;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #a9afb8;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1100px;
+            margin: auto;
+            padding: 150px 25px 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7dd3fc;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .status {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(74, 222, 128, .5);
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 82px);
+            line-height: 0.98;
+            letter-spacing: -5px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #7dd3fc;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #9ca3ad;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 21px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #e8eaed;
+            color: #0b0d10;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #292e36;
+            color: #d6d9dd;
+        }
+
+        .btn-secondary:hover {
+            border-color: #7dd3fc;
+            color: #7dd3fc;
+        }
+
+        /* WHATSAPP */
+
+        .btn-whatsapp {
+            border: 1px solid #263b31;
+            background: #102019;
+            color: #86efac;
+        }
+
+        .btn-whatsapp:hover {
+            border-color: #4ade80;
+            background: #14291f;
+            color: #bbf7d0;
+            transform: translateY(-2px);
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-number {
+            color: #7dd3fc;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 38px;
+            letter-spacing: -2px;
+        }
+
+        .section-header p {
+            color: #8f969f;
+            max-width: 600px;
+            margin-top: 12px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .about-text p {
+            color: #a7adb5;
+            margin-bottom: 18px;
+        }
+
+        .about-text strong {
+            color: #fff;
+        }
+
+        .info-list {
+            border-left: 1px solid #292e36;
+            padding-left: 30px;
+        }
+
+        .info {
+            margin-bottom: 25px;
+        }
+
+        .info small {
+            display: block;
+            color: #69717b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info strong {
+            font-size: 15px;
+            color: #e7e9ec;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 24px;
+            border: 1px solid #20252c;
+            background: #0f1216;
+            border-radius: 10px;
+            transition: .2s;
+        }
+
+        .skill:hover {
+            border-color: #37404b;
+            transform: translateY(-3px);
+        }
+
+        .skill h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #858c95;
+            font-size: 13px;
+        }
+
+        .qualification {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            padding: 28px 0;
+            border-top: 1px solid #20252c;
+        }
+
+        .qualification:last-child {
+            border-bottom: 1px solid #20252c;
+        }
+
+        .qualification-date {
+            color: #69717b;
+            font-size: 13px;
+        }
+
+        .qualification h3 {
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .qualification p {
+            color: #858c95;
+            font-size: 14px;
+        }
+
+        /* PROJETOS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .project {
+            background: #0f1216;
+            border: 1px solid #20252c;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            min-height: 270px;
+            transition: .25s;
+        }
+
+        .project:hover {
+            border-color: #3b4652;
+            transform: translateY(-4px);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .project-icon {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #161b21;
+            color: #7dd3fc;
+            font-weight: 700;
+        }
+
+        .github-link {
+            color: #747c86;
+            font-size: 13px;
+        }
+
+        .github-link:hover {
+            color: #7dd3fc;
+        }
+
+        .project h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #858c95;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: auto;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #171b20;
+            color: #8f969f;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .github-box {
+            margin-top: 25px;
+            padding: 45px;
+            border: 1px solid #242a31;
+            border-radius: 12px;
+            background: #0e1115;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .github-box h3 {
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .github-box p {
+            color: #858c95;
+            font-size: 14px;
+        }
+
+        .contact {
+            text-align: center;
+            padding-top: 130px;
+            padding-bottom: 130px;
+        }
+
+        .contact h2 {
+            font-size: 48px;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #858c95;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            border-top: 1px solid #1c2026;
+            padding: 25px;
+            text-align: center;
+            color: #555d66;
+            font-size: 12px;
+        }
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .qualification {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .github-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+            }
+
+            .contact h2 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+
+        <a href="#" class="logo">
+            Marcos<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#qualificacoes">Qualificações</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="status"></span>
+                Disponível para oportunidades
+            </div>
+
+            <h1>
+                Marcos<br>
+                <span>Lucas.</span>
+            </h1>
+
+            <p>
+                Estudante de Engenharia de Software e desenvolvedor
+                backend focado em PHP e Laravel. Gosto de transformar
+                problemas em sistemas organizados, funcionais e fáceis
+                de manter.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projetos" class="btn btn-primary">
+                    Ver meus projetos
+                </a>
+
+                <a
+                    href="https://github.com/devMarcos17"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    GitHub ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section id="sobre">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                01 / SOBRE
+            </div>
+
+            <h2>Um pouco sobre mim</h2>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Meu nome é <strong>Marcos Lucas</strong>, tenho
+                    <strong>19 anos</strong> e curso
+                    <strong>Engenharia de Software</strong>.
+                </p>
+
+                <p>
+                    Atualmente tenho direcionado meus estudos para o
+                    desenvolvimento backend, principalmente utilizando
+                    <strong>PHP e Laravel</strong>.
+                </p>
+
+                <p>
+                    Meu objetivo é evoluir constantemente através da
+                    prática, construindo sistemas reais e entendendo
+                    não apenas como escrever código, mas também como
+                    organizar e manter um projeto.
+                </p>
+
+                <p>
+                    Tenho interesse em arquitetura de software, APIs,
+                    banco de dados, testes automatizados e boas práticas
+                    de desenvolvimento.
+                </p>
+
+            </div>
+
+            <div class="info-list">
+
+                <div class="info">
+                    <small>Nome</small>
+                    <strong>Marcos Lucas</strong>
+                </div>
+
+                <div class="info">
+                    <small>Idade</small>
+                    <strong>19 anos</strong>
+                </div>
+
+                <div class="info">
+                    <small>Formação</small>
+                    <strong>Engenharia de Software</strong>
+                </div>
+
+                <div class="info">
+                    <small>Área</small>
+                    <strong>Desenvolvimento Backend</strong>
+                </div>
+
+                <div class="info">
+                    <small>Principal stack</small>
+                    <strong>PHP + Laravel</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HABILIDADES -->
+
+    <section id="habilidades">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                02 / HABILIDADES
+            </div>
+
+            <h2>O que eu sei fazer</h2>
+
+            <p>
+                Tecnologias e conceitos que venho utilizando nos meus
+                estudos e projetos.
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>PHP</h3>
+                <p>
+                    POO, boas práticas, sessões, validações,
+                    manipulação de dados e desenvolvimento web.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Laravel</h3>
+                <p>
+                    Controllers, Services, Middleware, Models,
+                    validação, autenticação e APIs.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>APIs REST</h3>
+                <p>
+                    Desenvolvimento e consumo de APIs utilizando
+                    JSON, autenticação e rotas organizadas.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Banco de Dados</h3>
+                <p>
+                    SQLite, MySQL e PostgreSQL, consultas SQL,
+                    relacionamentos e persistência de dados.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Testes</h3>
+                <p>
+                    PHPUnit e testes de funcionalidades para garantir
+                    que as regras do sistema continuem funcionando.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Git & GitHub</h3>
+                <p>
+                    Versionamento de código, branches, commits,
+                    repositórios e organização de projetos.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>POO</h3>
+                <p>
+                    Classes, objetos, encapsulamento, herança,
+                    abstração e organização de responsabilidades.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Arquitetura</h3>
+                <p>
+                    Separação de responsabilidades, Services,
+                    Controllers e organização de aplicações.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Frontend</h3>
+                <p>
+                    HTML, CSS e JavaScript para criação de interfaces
+                    e integração com APIs.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUALIFICAÇÕES -->
+
+    <section id="qualificacoes">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                03 / QUALIFICAÇÕES
+            </div>
+
+            <h2>Minha formação</h2>
+
+        </div>
+
+        <div class="qualification">
+
+            <div class="qualification-date">
+                ATUALMENTE
+            </div>
+
+            <div>
+                <h3>Engenharia de Software</h3>
+
+                <p>
+                    Formação voltada para desenvolvimento de software,
+                    programação, engenharia de requisitos, banco de
+                    dados e arquitetura de sistemas.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="qualification">
+
+            <div class="qualification-date">
+                PRÁTICA
+            </div>
+
+            <div>
+                <h3>Desenvolvimento de aplicações web</h3>
+
+                <p>
+                    Desenvolvimento de projetos próprios utilizando
+                    PHP, Laravel, APIs REST, bancos de dados e
+                    autenticação.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="qualification">
+
+            <div class="qualification-date">
+                PRÁTICA
+            </div>
+
+            <div>
+                <h3>Testes automatizados</h3>
+
+                <p>
+                    Experiência prática com PHPUnit e testes de APIs,
+                    validações e regras de negócio.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="qualification">
+
+            <div class="qualification-date">
+                FOCO
+            </div>
+
+            <div>
+                <h3>Backend PHP</h3>
+
+                <p>
+                    Direcionamento profissional para desenvolvimento
+                    backend utilizando PHP e Laravel.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJETOS -->
+
+    <section id="projetos">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                04 / PROJETOS
+            </div>
+
+            <h2>Projetos</h2>
+
+            <p>
+                Projetos que venho desenvolvendo para colocar meus
+                conhecimentos em prática.
+            </p>
+
+        </div>
+
+        <div class="projects">
+
+            <!-- FINANCEHELP -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        $
+                    </div>
+
+                    <a
+                        href="https://github.com/devMarcos17/FinacesHelp"
+                        target="_blank"
+                        class="github-link"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+                <h3>FinanceHelp</h3>
+
+                <p>
+                    Sistema de gerenciamento financeiro pessoal,
+                    desenvolvido com Laravel, permitindo controlar
+                    receitas, despesas, metas e investimentos.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">PHPUnit</span>
+                </div>
+
+            </article>
+
+            <!-- USER API -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        API
+                    </div>
+
+                    <a
+                        href="https://github.com/devMarcos17/user-api"
+                        target="_blank"
+                        class="github-link"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+                <h3>user-api</h3>
+
+                <p>
+                    CRUD de usuários desenvolvido através de uma API,
+                    com operações para criação, consulta, atualização
+                    e exclusão de registros.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">API REST</span>
+                    <span class="tag">CRUD</span>
+                    <span class="tag">SQLITE</span>
+                </div>
+
+            </article>
+
+            <!-- RENTSCAR -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                    </div>
+
+                    <a
+                        href="https://github.com/devMarcos17/Rents-Cars"
+                        target="_blank"
+                        class="github-link"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+                <h3>RentsCar</h3>
+
+                <p>
+                    Sistema voltado para gerenciamento de aluguel de
+                    veículos, desenvolvido para praticar desenvolvimento
+                    web, organização de código e banco de dados.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Database</span>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="github-box">
+
+            <div>
+                <h3>Mais projetos no GitHub</h3>
+
+                <p>
+                    Confira meu código, projetos em desenvolvimento
+                    e minha evolução como desenvolvedor.
+                </p>
+            </div>
+
+            <a
+                href="https://github.com/devMarcos17"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                Acessar GitHub ↗
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato" class="contact">
+
+        <div class="section-number">
+            05 / CONTATO
+        </div>
+
+        <h2>Vamos conversar?</h2>
+
+        <p>
+            Estou aberto a oportunidades de estágio e desenvolvimento
+            profissional na área de tecnologia.
+        </p>
+
+        <div class="contact-links">
+
+            <a
+                href="https://github.com/devMarcos17"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-secondary"
+                onclick="copiarEmail(event)"
+            >
+                Copiar e-mail
+            </a>
+
+            <a
+                href="https://wa.me/21972305425"
+                target="_blank"
+                class="btn btn-whatsapp"
+            >
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    © <span id="ano"></span> Marcos Lucas.
+    Desenvolvido por mim.
+
+</footer>
+
+<script>
+
+    document.getElementById("ano").textContent =
+        new Date().getFullYear();
+
+    const email = "diasmarcos846@gmail.com";
+
+    function copiarEmail(event) {
+
+        event.preventDefault();
+
+        navigator.clipboard.writeText(email);
+
+        const botao = event.currentTarget;
+        const textoOriginal = botao.textContent;
+
+        botao.textContent = "E-mail copiado ✓";
+
+        setTimeout(() => {
+            botao.textContent = textoOriginal;
+        }, 2000);
+    }
+
+</script>
+
+</body>
+</html>
+```
